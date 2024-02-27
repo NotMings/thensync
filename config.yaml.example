@@ -1,0 +1,47 @@
+backup:
+  folder:
+    enabled: true
+    source_folder:
+      - '' # Add the source folder path, you can add multiple paths
+    destination_folder:
+      - '' # Add the destination folder path, you can add multiple paths
+    effective_minutes: 1440
+    upload_to:
+      - '' # Use the storage name from the storage section
+
+  database:
+    enabled: true
+    mysql:
+      enabled: true
+      database: 
+        - '' # Add the database name, you can add multiple databases
+      dump_command: 'mysqldump' # eg. /usr/local/mysql/bin/mysqldump
+      config:
+        host: ''
+        port: 3306
+        username: ''
+        password: ''
+    pgsql:
+      enabled: true
+      database: 
+        - '' # Add the database name, you can add multiple databases
+      dump_command: 'pg_dump' # eg. /usr/local/pgsql/bin/pg_dump
+      config:
+        host: ''
+        port: 5432
+        username: ''
+        password: ''
+    destination_folder:
+      - '' # Add the destination folder path, you can add multiple paths
+    effective_minutes: 1440
+    upload_to:
+      - '' # Use the storage name from the storage section
+
+storage:
+  s3:
+    access_key_id: ''
+    secret_access_key: ''
+    bucket: ''
+    default_region: ''
+    endpoint: ''
+    folder: 'backup'
